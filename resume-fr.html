@@ -1,0 +1,537 @@
+<html>
+<head>
+  <base target="_blank"/>
+  <title>CV de Dom Derrien</title>
+  <meta http-equiv=content-type content="text/html; charset=UTF-8">
+  <link href="styles/resume.css" rel="stylesheet" type="text/css" />
+  <link href="styles/print.css" media="print" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/lightbox.js"></script>
+  <link href="styles/lightbox.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<div id="header">
+  <div id="header_r">
+    <div id="header_l">
+      <div id="header_bg">
+          <span>Dom Derrien</span><br />
+          Sp&eacute;cialiste d'applications Web 2.0<br />
+
+          Adopteur de la m&eacute;thodologie Agile
+	      </div>
+      <div id="switcher">
+           <a href="resume-en.html" title="Switch to the English version" target="_self"><img src="images/icon-refresh.png"></a>
+           <a href="resume-en.html" title="Switch to the English version" target="_self">English version</a>
+           <br />
+           <a href="http://domderrien.github.com/" title="Page Web publique de Dom Derrien" target="_self"><img src="images/icon-home.png"></a>
+           <a href="http://domderrien.github.com/" title="Page Web publique de Dom Derrien" target="_self">Accueil</a>
+
+      </div>
+      <div id="links">
+           <span class="normal">
+               <a href="mailto://dominique.derrien@gmail.com" title="Adresse de courriel"><img src="images/icon-gmail.png"></a>
+               <a href="mailto://dominique.derrien@gmail.com" title="Adresse de courriel">dominique.derrien@gmail.com</a>
+               <br />
+               <a href="http://www.google.com/reader/shared/02343169150872088595" title="S&eacute;lection d'articles de divers sources d'actualit&eacute;"><img src="images/icon-greader.png"></a>
+               <a href="http://www.google.com/reader/shared/02343169150872088595" title="S&eacute;lection d'articles de divers sources d'actualit&eacute;">Articles partag&eacute;s sur Google Reader</a>
+               <br />
+               <a href="http://domderrien.blogspot.com/" title="Mon blog"><img src="images/icon-blogger.png"></a>
+               <a href="http://domderrien.blogspot.com/" title="Mon blog">Blog &laquo;&nbsp;Sharing Technologies&nbsp;&raquo;</a>
+               <br />
+               <a href="http://www.linkedin.com/in/domderrien" title="R&eacute;seau de contacts"><img src="images/icon-linkedin.png"></a>
+               <a href="http://www.linkedin.com/in/domderrien" title="R&eacute;seau de contacts">Profil sur LinkedIn</a>
+               <br />
+               <a href="http://domderrien.myplaxo.com/" title="R&eacute;seau de contacts"><img src="images/icon-plaxo.png"></a>
+               <a href="http://domderrien.myplaxo.com/" title="R&eacute;seau de contacts">Profil sur Plaxo</a>
+               <br />
+               <a href="http://friendfeed.com/domderrien" title="Informations partag&eacute;es"><img src="images/icon-friendf.png"></a>
+               <a href="http://friendfeed.com/domderrien" title="Informations partag&eacute;es">FriendFeed</a>
+               <br />
+               <a href="http://www.twitter.com/domderrien"><img src="http://twitter.com/favicon.ico"></a>
+               <a href="http://www.twitter.com/domderrien">Derniers <i>Tweets</i></a>
+           </span>
+           <span class="print">
+               www.google.com/reader/shared/02343169150872088595 <img src="images/icon-greader.png"><br />
+               www.linkedin.com/in/domderrien <!--www.linkedin.com/pub/2/12b/18--> <img src="images/icon-linkedin.png"><br />
+               domderrien.blogspot.com <img src="images/icon-blogger.png"><br />
+               domderrien.myplaxo.com <img src="images/icon-plaxo.png"><br />
+               dominique.derrien@gmail.com <img src="images/icon-gmail.png"><br />
+               friendfeed.com/domderrien <img src="images/icon-friendf.png"><br/>
+               twitter.com/domderrien <img src="http://twitter.com/favicon.ico"><br/>
+           </span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+var dd = { // Namespace
+  getTaskDurations: function() {
+    if (dd._durations == null) {
+      var getDiffInMonths = function(/* Date */ firstDate, /* Date */ secondDate) {
+        return Math.round(((secondDate.getTime() - firstDate.getTime()) / 1000 / 60 / 60 / 24 / 365 * 12));
+      };
+      var durations = {};
+      durations["UCI"] =       getDiffInMonths(new Date(1994,0,1),  new Date(1996,1,1));
+      durations["THOMSON1"] =  getDiffInMonths(new Date(1996,11,1), new Date(1997,9,1));
+      durations["THOMSON2"] =  getDiffInMonths(new Date(1997,9,1),  new Date(1998,5,30));
+      durations["Steltor"] =   getDiffInMonths(new Date(1999,10,1), new Date(2003,9,1));
+      durations["Oracle1"] =   getDiffInMonths(new Date(2003,9,1),  new Date(2006,4,28));
+      durations["Oracle2"] =   getDiffInMonths(new Date(2006,4,28), new Date(2006,8,17));
+      durations["IBM"] =       getDiffInMonths(new Date(2006,9,4),  new Date(2008,4,28));
+      durations["Compuware"] = getDiffInMonths(new Date(2008,5,9),  new Date());
+      dd._durations = durations;
+    }
+    return dd._durations;
+  },
+  baseURL: "http://chart.apis.google.com/chart?",
+  getBarChartURL: function() {
+    var params = [];
+    var durations = dd.getTaskDurations();
+    params.push("cht=bhs"); // Chart type
+    params.push("&chd=t:" +
+      durations["Compuware"] + "," + durations["IBM"] + "," + durations["Steltor"] + "," + durations["THOMSON1"] + "," + durations["UCI"] + "|" +
+      "0," +                         "0," +                   durations["Oracle1"] + "," + durations["THOMSON2"] + "," + "0" + "|" +
+      "0," +                         "0," +                   durations["Oracle2"] + "," + "0," +                        "0"
+    );
+    params.push("&chs=500x200");
+    params.push("&chxt=x,y");
+    params.push("&chxp=0,12,24,36,48,60,72,84");
+    params.push("&chxl=0:|1 an|2|3|4|5|6|7 ans|1:|UCI|THOMSON|Oracle|IBM Rational|Compuware");
+    params.push("&chg=12,100,1,0");
+    params.push("&chco=4d89f9,c6d9fd");
+    params.push("&chtt=Diff&eacute;rentes compagnies o&ugrave; j'ai travaill&eacute;|Des petites et des grandes");
+    return dd.baseURL + params.join("");
+  },
+  getPieChartURL: function() {
+    var params = [];
+    var durations = dd.getTaskDurations();
+    params.push("cht=p3");
+    params.push("chd=t:" +
+      (durations["UCI"]) + "," +                              // Paris
+      (durations["THOMSON1"] + durations["THOMSON2"]) + "," + // Rennes
+      (durations["Steltor"]) + "," +                          // Montr�al
+      (durations["Oracle1"] + durations["Oracle2"]) + "," +   // Redwood Shores
+      (durations["IBM"] + durations["Compuware"])             // Montr�al
+    );
+    params.push("chs=500x200");
+    params.push("chl=Paris (FR)|Rennes (FR)|Montr&eacute;al (CA)|Redwood Shores (US)|Montr&eacute;al (CA)");
+    params.push("chco=4d89f9");
+    params.push("chtt=Places visit&eacute;es|De la France au Canada");
+    return dd.baseURL + params.join("&");
+  },
+  getMapChartURL: function() {
+    var params = [];
+    var durations = dd.getTaskDurations();
+    params.push("cht=t");
+    params.push("chs=440x220");
+    params.push("chco=ffffff,4d89f9,c6d9fd");
+    params.push("chld=FRCAUS");
+    params.push("chd=t:" +
+      (durations["UCI"] + durations["THOMSON1"] + durations["THOMSON2"]) + "," + // FR
+      (durations["Steltor"] + durations["IBM"] + durations["Compuware"]) + "," + // CA
+      (durations["Oracle1"] + durations["Oracle2"])                              // US
+    );
+    params.push("chtm=world");
+    params.push("chf=bg,s,EAF7FE");
+    params.push("chtt=Places visit&eacute;es|De la France au Canada");
+    return dd.baseURL + params.join("&");
+  }
+};
+</script>
+
+<a name="profExp"></a>
+<h1>
+    <div class="graphics">
+      <script type="text/javascript">
+         document.write("&nbsp;<a href=\"" + dd.getBarChartURL() + "\" rel=\"lightbox\" title=\"Compagnies\" onmouseover=\"this.onclick();\"><img src=\"images/icon-bar-chart.png\"></a>");
+         document.write("&nbsp;<a href=\"" + dd.getPieChartURL() + "\" rel=\"lightbox\" title=\"G&eacute;ographies\" onmouseover=\"this.onclick();\"><img src=\"images/icon-pie-chart.png\"></a>");
+         document.write("&nbsp;<a href=\"" + dd.getMapChartURL() + "\" rel=\"lightbox\" title=\"G&eacute;ographies\" onmouseover=\"this.onclick();\"><img src=\"images/icon-world-map.png\"></a>");
+         document.write("</a>");
+      </script>
+    </div>
+    Exp&eacute;rience Professionnelle
+</h1>
+
+<div class="date">
+     Jusqu'aujourd'hui
+</div>
+<h2>
+    <a name="compuware"></a>
+    <a href="http://www.compuware.com/" title="Site Web de Compwuare Corporation">Compuware Corporation</a> - Montr&eacute;al, Canada
+</h2>
+<br clear="both" />
+
+<div class="work_unit">
+     <a name="cpwr1"></a>
+
+     <div class="date">
+         Depuis Juin 2008
+     </div>
+     <h3>
+         <div class="title">Expert Web 2.0 et Mobiles</div>
+         <div class="position">Consultant Technique Senior, Technology Group, Compuware</div>
+
+     </h3>
+    <br clear="both" />
+
+    <h4>Responsabilit&eacute;s</h4>
+    <ul>
+        <li>Faire de la veille technologique, partager son expertise et appliquer ses connaissances</li>
+        <li>Proposer l'adoption de plateformes et m&eacute;thodologies de d&eacute;veloppement pour am&eacute;liorer la production actuelle</li>
+        <li>Proposer le d&eacute;veloppement de nouveaux produits</li>
+    </ul>
+
+    <h4>Accomplissements</h4>
+    <ul>
+        <li>Mise en place d'une extension pour le syst&egrave;me <i>FreeMarker</i>, facilitant la personalisation du <i>VSM Dashboard</i></li>
+        <li>Participation aux groupes de discussion <i>Agile</i> et <i>Best Practices</i></li>
+        <li>S&eacute;lection d'une plateforme de mise en &oelig;uvre de Portails Web</li>
+    </ul>
+</div>
+
+<div class="date">
+     2006-2008
+</div>
+<h2>
+    <a name="ibm"></a>
+    <a href="http://www.ibm.com/software/rational/" title="Site Web d'IBM Corporation">IBM, Software Group (SWG), Rational</a> - Montr&eacute;al, Canada
+</h2>
+<br clear="both" />
+
+<div class="work_unit">
+     <a name="ibm1"></a>
+
+     <div class="date">
+         Oct. 2006 - Juin 2008
+     </div>
+     <h3>
+         <div class="title">Architecte technique du client Web de <a href="http://www-306.ibm.com/software/info/ecatalog/fr_CA/products/M510488D18389E85.html?&S_TACT=none&S_CMP=none">Rational Portfolio Manager</a> Client Web 7.1+</div>
+         <div class="position">D&eacute;veloppeur Conseil, IBM Rational group, IBM Software Group</div>
+
+     </h3>
+    <br clear="both" />
+
+    <h4>Responsabilit&eacute;s</h4>
+    <ul>
+        <li>Travailler avec l'analyste d'affaires pour d&eacute;finir des fonctionnalit&eacute;s r&eacute;alistes</li>
+        <li>Sp&eacute;cifier de nouvelles fonctionnalit&eacute;s et approuver les conceptions des autres membres de l'&eacute;quipe</li>
+        <li>D&eacute;velopper des composants <a href="http://dojotoolkit.org/">dojo</a> (<i>e.g.</i> un &eacute;diteur RTF)</li>
+        <li>&Eacute;tudier la performance de l'application et l'am&eacute;liorer</li>
+    </ul>
+
+    <h4>Accomplissements</h4>
+    <ul>
+        <li>Audit de l'application</li>
+        <li>D&eacute;finition d'un environnement d'internationalisation unifi&eacute; pour les applications multi tiers</li>
+        <li>D&eacute;finition d'un environnement de mod&egrave;les pour le filtrage des donn&eacute;es &agrave; extraire et l'organisation du <i>UI</i></li>
+        <li>Mise en &oelig;uvre d'un environnement de tests (JSUnit, JUnit+Selenium, JSCoverage)</li>
+    </ul>
+</div>
+
+<div class="date">
+     1999-2006
+</div>
+<h2>
+    <a name="oracle"></a>
+    <a href="http://www.oracle.com" title="Site Web d'Oracle">Oracle</a></b> (anciennement Steltor) - Montr&eacute;al, Canada
+</h2>
+<br clear="both" />
+
+<div class="work_unit">
+    <a name="oracle1"></a>
+
+    <div class="date">
+        Mai 2006 - Sept. 2006
+    </div>
+    <h3>
+        <div class="title">D&eacute;veloppeur de Web Access Client 11g et de composants pour Oracle ADF</div>
+        <div class="position">Membre principal de l'&eacute;quipe technique, Web Access Client, Oracle Collaboration Suite - Technologies serveur</div>
+    </h3>
+
+    <br clear="both" />
+
+    <!--p>
+        Key role in the integration of components using the ADF push channel (Presence/IM/Notifications). Key role in the
+        adaptation of the OCS interaction model to the Oracle ADF one (development of ADFv components and definition of ADFm
+        structures implementing OCS functionalities).
+    </p-->
+
+    <p>
+        L'exigence des composants de WAC 11g s'int&eacute;grant parfaitement dans les interfaces des applications
+        E-Business d'Oracle &agrave; conduit &agrave; l'abandon du d&eacute;veloppement de l'environnement d'applications
+        Internet riche pour OCS pour l'utilisation exclusive de l'environnement
+        <a href="http://www.oracle.com/technology/products/jdev/htdocs/partners/addins/exchange/jsf/index.html"
+        title="Oracle ADF Faces Web site">Oracle ADF Faces</a> (la plupart des applications E-Business utilisent ADF).
+        ADF Faces est bas&eacute; sur le standard ouvert <a href="http://java.sun.com/javaee/javaserverfaces/index.jsp"
+        title="JavaServer Faces Web site">JSF</a> et la version pr&eacute;sentement en cours de d&eacute;veloppement
+        va offrir des interactions riches. Plusieurs parties de ADF sont ouvertes et librement accessible dans le
+        projet Trinidad de la communaut&eacute;  <a href="http://myfaces.apache.org/"
+        title="MyFaces Open source project Web site">MyFaces</a>.
+        [Mise &agrave; jour 12-2007&nbsp;: ADF a &eacute;t&eacute; abandonn&eacute; pour le d&eacute;veloppement du client
+        Web de OCS 11g, la librairie sur laquelle j'avais travaill&eacute; a &eacute;t&eacute; r&eacute;activ&eacute;e et le code
+        d&eacute;j&agrave; en place est migr&eacute; par morceaux.]
+    </p>
+
+</div>
+
+<div class="work_unit">
+    <a name="oracle2"></a>
+    <div class="date">
+        Oct. 2003 - Mai 2006
+    </div>
+    <h3>
+        <div class="title">Architecte du Web Access Client et de sa librairie JavaScript</div>
+        <div class="position">Membre principal de l'&eacute;quipe technique, Web Access Client, Oracle Collaboration Suite - Technologies serveur</div>
+
+    </h3>
+    <br clear="both" />
+
+    <p>
+      R&ocirc;le cl&eacute; dans la conception et la mise en &oelig;uvre de la couche de communication.
+      R&ocirc;le cl&eacute; dans la conception d'une API interchangeable pour le tiers Web.
+      R&ocirc;le cl&eacute; dans l'architecture de l'environnement JavaScript et de l'organisation de l'application.
+      D&eacute;mo de WAC 10g disponible sur&nbsp;: <a href="http://ocswebdemo.oracle.com/" title="D&eacute;monstrateur actif du client Web Access">http://ocswebdemo.oracle.com/</a>
+      [Mise &agrave; jour 4-2008&nbsp;: la page du d&eacute;monstrateur n'est plus accessible.]
+    </p>
+
+    <h4>Responsabilit&eacute;s</h4>
+    <ul>
+      <li>D&eacute;finir la couche de communication (format des donn&eacute;es &eacute;chang&eacute;es, contr&ocirc;le des erreurs de connexion, m&eacute;canisme de r&eacute;-essai automatique, contr&ocirc;leurs Java et JavaScript)</li>
+
+      <li>D&eacute;finir la librairie de gadgets -objets JavaScript rendus par le biais du <a href="http://www.w3.org/DOM/" title="Document Object Model (DOM) specification by W3C">DOM</a>, activit&eacute;s par des &eacute;v&eacute;nements DOM- et impl&eacute;menter des gadgets complexes (<i>e.g.</i> liste simple et liste virtuelle)</li>
+      <li>D&eacute;finir le mod&egrave;le de donn&eacute;es et adapter le concept <a href="http://en.wikipedia.org/wiki/Model_view_controller" title="Model-view-controller (MVC) definition from Wikipedia">MVC model 2</a> au code client en JavaScript</li>
+
+      <li>Impl&eacute;menter la console du r&eacute;pertoire d'entreprise et du carnet d'adresses, ainsi que la console de messagerie instantan&eacute;e</li>
+    </ul>
+
+    <h4>Accomplissements</h4>
+    <ul>
+      <li>Production d'un service <a href="http://en.wikipedia.org/wiki/Ajax_%28programming%29" title="AJAX Definition from Wikipedia.org">AJAX</a> entre le <i>servlet</i> et les navigateurs Web - une librairie Java et une autre JavaScript supportant deux formats de transfert&nbsp;: <a href="http://json.org" title="JSON standard definition & libraries">JSON</a> et XML</li>
+
+      <li>Production d'une voie de <i>Push</i> qui transmet les notifications asynchrones vers l'application JavaScript</li>
+      <li>Adaptation de la <a href="http://martinfowler.com/" title="eXtreme Programming, as defined by Martin Fowler">m&eacute;thode XP</a> &agrave; la production de code JavaScript: petites t&acirc;ches, r&eacute;visions et <i>refactoring</i>, <i>builds</i> stables et r&eacute;guliers, javadoc et jsdoc, JUnit et JSUnit, couverture du code par les tests, etc.</li>
+
+    </ul>
+</div>
+
+<div class="work_unit">
+    <a name="oracle3"></a>
+    <div class="date">
+         Nov. 1999 - Oct. 2003
+    </div>
+    <h3>
+        <div class="title">Concepteur et d&eacute;veloppeur du Web Calendar Administrator</div>
+
+        <div class="position">Membre senior de l'&eacute;quipe technique, Plateforme de gestion du temps - Serveur, Technologies serveur</div>
+    </h3>
+    <br clear="both" />
+
+    <p>
+      Sous la responsabilit&eacute; du directeur d'&eacute;quipe et en relation avec l'&eacute;quipe de gestion des produits.
+      R&ocirc;le cl&eacute; dans la conception architecturale et dans la mise en &oelig;uvre d'une nouvelle g&eacute;n&eacute;ration d'outils d'administration.
+    </p>
+
+    <h4>Responsabilit&eacute;s</h4>
+    <ul>
+      <li>Abstraire l'architecture mat&eacute;rielle pour en faciliter son contr&ocirc;le</li>
+      <li>Concevoir des nouvelles API d&eacute;di&eacute;es &agrave; l'administration de serveur</li>
+
+      <li>Mettre en &oelig;uvre l'interface pour Web pour accomplir les t&acirc;ches administratives</li>
+      <li>Fournir les documents de sp&eacute;cifications fonctionnelles pour des projets globaux (internationalisation et int&eacute;gration avec <i>OEM</i>)</li>
+    </ul>
+
+    <h4>Accomplissements</h4>
+
+    <ul>
+      <li>Adjonction de fonctionnalit&eacute;s c&ocirc;t&eacute; serveur pour autoriser son contr&ocirc;le distant</li>
+      <li>Production d'un outil Web d'administration multi plateforme - un CGI en C++</li>
+      <li>D&eacute;veloppement de mod&egrave;les s&eacute;parant la d&eacute;finition de l'interface de celle des donn&eacute;es &agrave; afficher</li>
+
+    </ul>
+</div>
+
+<p style="margin: 20px 0 10px 0; font-style: italic;">
+    Activit&eacute;s entre Mai 1998 et Octobre 1999</b><br/>
+    D&eacute;veloppement d'un moteur de calcul neuro-flou et de son interface graphique (en C++ sur PC/Windows).
+    Accomplissement du projet d'immigration au Canada.
+    Accomplissement de divers projets et voyages personnels.
+
+</p>
+
+<a name="tmm"></a>
+<div class="date">
+     1996-1998
+
+</div>
+<h2>
+    <a href="http://www.thomson-europe.com/" title="THOMSON Web site">THOMSON</a> (anciennement THOMSON multimedia R&D France) - Rennes, France
+</h2>
+<br clear="both" />
+
+<div class="work_unit">
+  <a name="tmm1"></a>
+  <div class="date">
+       Oct. 97 - Mai 98
+  </div>
+
+  <h3>
+      <div class="title">Architecte d'interface graphique et chef d'&eacute;quipe</div>
+      <div class="position">Sous la responsabilit&eacute; du directeur des logiciels pour les d&eacute;codeurs de t&eacute;l&eacute;vision num&eacute;riques. R&ocirc;le cl&eacute; dans la conception architecturale et l'impl&eacute;mentation des processus interactifs.</div>
+
+  </h3>
+  <br clear="both" />
+
+    <h4>Responsabilit&eacute;s</h4>
+  <ul>
+    <li>&Eacute;crire les sp&eacute;cifications contractuelles de l'interface graphique (charte graphique, interactions entre les diff&eacute;rents &eacute;crans, syst&egrave;me de mise &agrave; jour automatique) pour un d&eacute;codeur de t&eacute;l&eacute;vision num&eacute;rique</li>
+    <li>Quantifier et organiser le processus de d&eacute;veloppement (analyse, conception, codage et tests)</li>
+    <li>Participer &agrave; la conception et au d&eacute;veloppement du logiciel</li>
+    <li>&Ecirc;tre un expert des interfaces pour l'&eacute;quipe</li>
+  </ul>
+
+    <h4>Accomplissements</h4>
+  <ul>
+    <li>Proposition et validation de nouveaux proc&eacute;d&eacute;s (mise &agrave; jour dynamique du syst&egrave;me par un flux &eacute;mis par un flux vid&eacute;o) pour le d&eacute;codeur de Via Digital</li>
+    <li>D&eacute;veloppement et maintenance d'une librairie &eacute;volutive de gadgets visuels pour l'environnement des d&eacute;codeurs (avec <a href="http://www.opentv.com/products/dev_sdk.html" title="OpenTV SDK description">OpenTV SDK</a> sur machines SUN)</li>
+    <li>Collaboration dans le d&eacute;veloppement d'une machine d'&eacute;tats qui contr&ocirc;le la circulation des &eacute;v&eacute;nements interactifs</li>
+  </ul>
+</div>
+
+<div class="work_unit">
+    <a name="tmm2"></a>
+    <div class="date">
+
+         D&eacute;c. 96-Oct. 97
+    </div>
+    <h3>
+        <div class="title">Coordinateur  technique et int&eacute;grateur</div>
+        <div class="position">Sous la responsabilit&eacute; du chef d'&eacute;quipe des interfaces graphiques.</div>
+    </h3>
+
+    <br clear="both" />
+
+    <h4>Responsabilit&eacute;s</h4>
+    <ul>
+      <li>Sp&eacute;cifier les processus de communication entre les parties distribu&eacute;es du programme (utilisation de sockets Unix sur machines SUN, et de liens s&eacute;rie entre PC et machines SUN)</li>
+      <li>Int&eacute;grer les travaux sous contract&eacute;s (reconnaissance vocale et traitement naturel du langage)</li>
+      <li>Fournir un environnement graphique pour piloter l'environnement de d&eacute;monstration</li>
+      <li>Organiser le transfert technologique</li>
+    </ul>
+
+    <h4>Accomplissements</h4>
+    <ul>
+      <li>R&eacute;alisation du d&eacute;monstrateur</li>
+      <li>&Eacute;tablissement de l'&eacute;tat de l'art de la reconnaissance vocale et du traitement naturel du langage</li>
+      <li>D&eacute;veloppement d'une base de donn&eacute;es de programmes t&eacute;l&eacute;visuels (60 cha&icirc;nes sur une semaine en boucle) et d'une API de consultation distante (avec une DLL en C++ et Ms Access sur PC/Windows)</li>
+      <li>D&eacute;veloppement d'un banc d'essai de syst&egrave;mes de reconnaissance vocale (en C++ sur PC/Windows)</li>
+
+    </ul>
+</div>
+
+<a name="uci"></a>
+<div class="date"">
+     1994-1996
+</div>
+<h2>
+    UCI Micro&eacute;lectronique - Paris, France
+</h2>
+<br clear="both" />
+
+<div class="work_unit">
+
+     <h3>
+         <div class="title">Ing&eacute;nieur de recherche et d&eacute;veloppement</div>
+     </h3>
+
+     <br clear="both" />
+
+    <h4>Accomplissements</h4>
+    <ul>
+
+      <li>Expert en techniques neuronales et logique floue.</li>
+      <li>R&eacute;alisation d'un moteur neuro-flou et de son interface graphique (en C++ sur PC/Windows)</li>
+    </ul>
+</div>
+
+<a name="compSkills"></a>
+<h1>
+    Comp&eacute;tences Informatiques
+</h1>
+
+<ul>
+    <li>Langages de programmation&nbsp;: Java, JavaScript + DHTML, <span style="color: gray;">C++, MFC/OWL, OpenTV</span></li>
+    <li>Outils de d&eacute;veloppement&nbsp;: Eclipse + JSEclipse, Tomcat 5, IntelliJ IDEA, ant, OracleAS (9i + 10g), JUnit + cobertura, JSUnit + Selenium, <span style="color: gray;">Borland C++, Microsoft Visual C++, gcc,</span> ClearCase (UCM), CVS/UCM, Subversion, Ant, CruiseControl</li>
+    <li>Syst&egrave;me d'exploitation: JVM, <span style="color: gray;">Windows, GNU/Linux, Solaris</span></li>
+    <li>M&eacute;thodes: UML, Design patterns, J2EE (Servlet/JSP/EJB), JSF, Agile methodology (TDD + Continuous Integration + Peer Programming)</li>
+</ul>
+
+<a name="courses"></a>
+<h1>
+    Formation continue
+</h1>
+
+<ul>
+    <li>Septembre 2007 - <a href="http://www-304.ibm.com/jct03001c/services/learning/ites.wss/us/en?pageType=course_description&courseCode=VA361">IBM WebSphere Application Server v6.1 Administration</a></li>
+    <li>Juillet 2004 - <a href="http://education.oracle.com/pls/web_prod-plq-dad/show_desc.redirect?dc=D14347GC10" title="Oracle course description">Oracle9i: XML fundamentals for developers</a></li>
+    <li>Juin 2004 - <a href="http://education.oracle.com/pls/web_prod-plq-dad/show_desc.redirect?dc=D16501GC10" title="Oracle course description">Oracle9i: Build J2EE applications</a></li>
+    <li>Juillet 2003 - <a href="http://education.oracle.com/pls/web_prod-plq-dad/show_desc.redirect?dc=D16390GC20" title="Oracle course description">Oracle 9i: Java programming</a></li>
+    <li>F&eacute;vrier 2001 - Analyse et conception orient&eacute;e-objet</li>
+    <li>Avril 2000 - Programmation avanc&eacute;e en C++</li>
+</ul>
+
+<a name="education"></a>
+<h1>
+    Scolarit&eacute;
+</h1>
+
+<ul>
+    <li>Dipl&ocirc;me d'&Eacute;tudes Approfondies (DEA) en informatique (&eacute;quiv. M.A.Sc.) Rennes&nbsp;1 University, France, 1992</li>
+    <li>Ma&icirc;trise de Sciences et Techniques (MST) (&eacute;quiv. B.Sc.) &laquo;&nbsp;Architecture des machines informatiques&nbsp;&raquo;, Rennes&nbsp;1 University, France, classement 1/14 - 1990-91</li>
+</ul>
+
+<a name="pub"></a>
+<h1>
+    Publications et conf&eacute;rences
+</h1>
+
+<ul>
+  <li>M&eacute;thode de d&eacute;veloppement Agile - <a href="http://profs.logti.etsmtl.ca/departement/index.html">&Eacute;cole Sup&eacute;rieure de Technologie</a>, Montr&eacute;al, Avril 2008</li>
+  <li>D. Derrien - Sir&egrave;ne F&nbsp;: a hardware/software package dedicated to computing of Neuro Fuzzy Networks - Journ&eacute;es sur les r&eacute;seaux neuromim&eacute;tiques et leurs applications, Marseille, France, 15-16&nbsp;d&eacute;cembre. 1994</li>
+
+</ul>
+
+<a name="soc"></a>
+<h1>
+    Implications sociales
+</h1>
+
+<ul>
+  <li>Depuis Sept. 2008&nbsp;: cofondateur du groupe <a href="http://archmtl.spaces.live.com">Rencontres d'Architecture de Montr&eacute;al</a> qui rassemble r&eacute;guli&egrave;rement des architectes TI de domaines et d'exp&eacute;riences vari&eacute;s pour cr&eacute;er des contacts, pour assister &agrave; des conf&eacute;rences techniques, pour apporter des contributions &agrave; la communaut&eacute; TI.</li>
+  <li>Depuis 2007&nbsp;: cofondateur du chap&icirc;tre canadien de <a href="http://www.diku-dilenga.org/">Diku Dilenga</a> pour supporter financi&egrave;rement et logistiquement le chap&icirc;tre de la R&eacute;publique d&eacute;mocratique du Congo qui offre du micro financement, de l'&eacute;ducation et de l'aide aux plus pauvres.</li>
+  <li>1999-2007: <a href="http://www.results-resultats.ca/">RESULTS Canada</a> pour faire pression sur le gouvernement pour qu'il investisse dans des projets visant &agrave; lutter contre la pauvret&eacute; absolue, pour amener les citoyens &agrave; reprendre place dans le domaine politique.</li>
+</ul>
+
+<a name="languages"></a>
+<h1>
+    Langues
+</h1>
+
+<ul>
+  <li>Fran&ccedil;ais comme langue maternelle,</li>
+  <li>Anglais courant.</li>
+</ul>
+
+<br />
+
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4791131-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>

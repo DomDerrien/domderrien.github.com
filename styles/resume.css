@@ -1,0 +1,142 @@
+html {
+  height: 100%;
+  margin-bottom: 0px;
+}
+img,table {
+  border:none;
+}
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  margin: 10px;
+  font-size: 14px;
+  color: #333;
+}
+a:link, a:visited {
+  text-decoration: none;
+  font-weight: normal;
+  color: #5076b6;
+}
+a:hover {
+  text-decoration: underline;
+  font-weight: normal;
+  color: #0b3768;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-align:justify;
+}
+div#header {
+  background: url(../images/header_top_middle_shadow_bg.jpg) top left repeat-x;
+  height:164px;
+}
+div#header_r {
+  background: transparent url(../images/header_r_bg.jpg) top right no-repeat;
+  height:164px;
+}
+div#header_l {
+  background: transparent url(../images/header_l_bg.jpg) top left no-repeat;
+  height:164px;
+}
+div#header_bg {
+  text-align: center;
+  padding: 26px 0;
+  font-size: 28px;
+  color: #fff;
+}
+div#header_bg span {
+  font-size: 36px;
+  font-weight: bold;
+}
+div#switcher {
+  text-align: left;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+div#links {
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+div#links span.normal {
+  display: block;
+}
+div#links span.print {
+  display: none;
+}
+div#switcher a, div#links a {
+  color:white;
+  font-weight: bold;
+}
+div#switcher img, div#links img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+h1 {
+  margin: 20px 0 10px 0;
+  color:#fefefe;
+  font-weight: bold;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  background:#eeeeee;
+  padding:2px 0 2px 10px;
+  text-align: left;
+  background:transparent url(../images/menu_t.jpg) top left repeat-x;
+
+}
+h1 div {
+  float: right;
+  position: relative;
+  padding-right: 10px;
+}
+h1 div img {
+  vertical-align: middle;
+}
+h2, h3 {
+   float: left;
+   margin: 5px 0;
+   font-size: 16px;
+   font-weight: normal;
+}
+h2 a:link, h3 a:link {
+  font-weight: bold;
+}
+h2, h3 div.title {
+   font-weight: bold;
+}
+h3 div.position {
+   font-style: italic;
+   font-size: 14px;
+}
+.date {
+   float: right;
+   white-space: nowrap;
+   margin: 5px 0;
+}
+.work_unit {
+  margin: 5px 0px 5px 40px;
+  padding: 5px;
+  border:1px solid #ccc;
+  background:#fefefe;
+  overflow: hidden;
+}
+h4 {
+  text-decoration: underline;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 10px 0 5px 0;
+}
+ul {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+li {
+  margin-left: 40px;
+}
