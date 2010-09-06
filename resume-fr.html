@@ -38,20 +38,17 @@
                <a href="http://www.google.com/reader/shared/02343169150872088595" title="S&eacute;lection d'articles de divers sources d'actualit&eacute;"><img src="images/icons/greader.ico"></a>
                <a href="http://www.google.com/reader/shared/02343169150872088595" title="S&eacute;lection d'articles de divers sources d'actualit&eacute;">Articles partag&eacute;s sur Google Reader</a>
                <br />
-               <a href="http://domderrien.blogspot.com/" title="Mon blog"><img src="images/icons/blogger.ico"></a>
+               <a href="http://domderrien.blogspot.com/" title="Mon blog"><img src="images/icons/blogger.ico" width="16" height="16"></a>
                <a href="http://domderrien.blogspot.com/" title="Mon blog">Blog &laquo;&nbsp;Sharing Technologies&nbsp;&raquo;</a>
                <br />
                <a href="http://www.linkedin.com/in/domderrien" title="R&eacute;seau de contacts"><img src="images/icons/linkedin.ico"></a>
                <a href="http://www.linkedin.com/in/domderrien" title="R&eacute;seau de contacts">Profil sur LinkedIn</a>
                <br />
-               <a href="http://domderrien.myplaxo.com/" title="R&eacute;seau de contacts"><img src="images/icons/plaxo.ico"></a>
-               <a href="http://domderrien.myplaxo.com/" title="R&eacute;seau de contacts">Profil sur Plaxo</a>
-               <br />
-               <a href="http://friendfeed.com/domderrien" title="Informations partag&eacute;es"><img src="images/icons/friendfeed.ico"></a>
-               <a href="http://friendfeed.com/domderrien" title="Informations partag&eacute;es">FriendFeed</a>
-               <br />
                <a href="http://www.twitter.com/domderrien"><img src="images/icons/twitter.ico"></a>
                <a href="http://www.twitter.com/domderrien">Derniers <i>Tweets</i></a>
+               <br />
+               <a href="http://github.com/domderrien/" title="Source de logiciels ouverts"><img src="images/icons/github.ico"></a>
+               <a href="http://github.com/domderrien/" title="Source de logiciels ouverts">Mes sources ouverts</a>
            </span>
            <span class="print">
                www.google.com/reader/shared/02343169150872088595 <img src="images/icons/greader.ico"><br />
@@ -83,7 +80,8 @@ var dd = { // Namespace
       durations["Oracle1"] =   getDiffInMonths(new Date(2003,9,1),  new Date(2006,4,28));
       durations["Oracle2"] =   getDiffInMonths(new Date(2006,4,28), new Date(2006,8,17));
       durations["IBM"] =       getDiffInMonths(new Date(2006,9,4),  new Date(2008,4,28));
-      durations["Compuware"] = getDiffInMonths(new Date(2008,5,9),  new Date());
+      durations["Compuware"] = getDiffInMonths(new Date(2008,5,9),  new Date(2010,1,20));
+      durations["M&A"] =       getDiffInMonths(new Date(2010,1,20), new Date());
       dd._durations = durations;
     }
     return dd._durations;
@@ -94,14 +92,14 @@ var dd = { // Namespace
     var durations = dd.getTaskDurations();
     params.push("cht=bhs"); // Chart type
     params.push("&chd=t:" +
-      durations["Compuware"] + "," + durations["IBM"] + "," + durations["Steltor"] + "," + durations["THOMSON1"] + "," + durations["UCI"] + "|" +
-      "0," +                         "0," +                   durations["Oracle1"] + "," + durations["THOMSON2"] + "," + "0" + "|" +
-      "0," +                         "0," +                   durations["Oracle2"] + "," + "0," +                        "0"
+      durations["M&A"] + "," + durations["Compuware"] + "," + durations["IBM"] + "," + durations["Steltor"] + "," + durations["THOMSON1"] + "," + durations["UCI"] + "|" +
+      "0," +                   "0," +                         "0," +                   durations["Oracle1"] + "," + durations["THOMSON2"] + "," + "0" + "|" +
+      "0," +                   "0," +                         "0," +                   durations["Oracle2"] + "," + "0," +                        "0"
     );
     params.push("&chs=500x200");
     params.push("&chxt=x,y");
     params.push("&chxp=0,12,24,36,48,60,72,84");
-    params.push("&chxl=0:|1 an|2|3|4|5|6|7 ans|1:|UCI|THOMSON|Oracle|IBM Rational|Compuware");
+    params.push("&chxl=0:|1 an|2|3|4|5|6|7 ans|1:|UCI|THOMSON|Oracle|IBM Rational|Compuware|Milstein and assoc.");
     params.push("&chg=12,100,1,0");
     params.push("&chco=4d89f9,c6d9fd");
     params.push("&chtt=Diff&eacute;rentes compagnies o&ugrave; j'ai travaill&eacute;|Des petites et des grandes");
@@ -112,11 +110,11 @@ var dd = { // Namespace
     var durations = dd.getTaskDurations();
     params.push("cht=p3");
     params.push("chd=t:" +
-      (durations["UCI"]) + "," +                              // Paris
-      (durations["THOMSON1"] + durations["THOMSON2"]) + "," + // Rennes
-      (durations["Steltor"]) + "," +                          // Montr�al
-      (durations["Oracle1"] + durations["Oracle2"]) + "," +   // Redwood Shores
-      (durations["IBM"] + durations["Compuware"])             // Montr�al
+      (durations["UCI"]) + "," +                                     // Paris
+      (durations["THOMSON1"] + durations["THOMSON2"]) + "," +        // Rennes
+      (durations["Steltor"]) + "," +                                 // Montréal
+      (durations["Oracle1"] + durations["Oracle2"]) + "," +          // Redwood Shores
+      (durations["IBM"] + durations["Compuware"]) + durations["M&A"] // Montréal
     );
     params.push("chs=500x200");
     params.push("chl=Paris (FR)|Rennes (FR)|Montr&eacute;al (CA)|Redwood Shores (US)|Montr&eacute;al (CA)");
@@ -132,9 +130,9 @@ var dd = { // Namespace
     params.push("chco=ffffff,4d89f9,c6d9fd");
     params.push("chld=FRCAUS");
     params.push("chd=t:" +
-      (durations["UCI"] + durations["THOMSON1"] + durations["THOMSON2"]) + "," + // FR
-      (durations["Steltor"] + durations["IBM"] + durations["Compuware"]) + "," + // CA
-      (durations["Oracle1"] + durations["Oracle2"])                              // US
+      (durations["UCI"] + durations["THOMSON1"] + durations["THOMSON2"]) + "," +                    // FR
+      (durations["Steltor"] + durations["IBM"] + durations["Compuware"]) + durations["M&A"] + "," + // CA
+      (durations["Oracle1"] + durations["Oracle2"])                                                 // US
     );
     params.push("chtm=world");
     params.push("chf=bg,s,EAF7FE");
@@ -161,6 +159,48 @@ var dd = { // Namespace
      Jusqu'aujourd'hui
 </div>
 <h2>
+    <a name="m&a"></a>
+    <a href="http://milstein-assoc.com/" title="Milstein and Associates Website">Milstein and associates inc.</a> - Montr&eacute;al, Canada
+</h2>
+<br clear="both" />
+
+<div class="work_unit">
+     <a name="m&a1"></a>
+
+     <div class="date">
+         Depuis Janvier 2010
+     </div>
+     <h3>
+         <div class="title">Co-fondateur de <a href="http://anothersocialeconomy.com/about">AnotherSocialEconomy.com</a><br/>Architecte logiciel et chef d'équipe</div>
+     </h3>
+    <br clear="both" />
+
+    <h4>Responsibilit&eacute;s</h4>
+    <ul>
+    	<li>D&eacute;finir l'architecture du moteur de AnotherSocialEconomy.com (ASE)</li>
+        <li>D&eacute;finir l'architecture des interfaces de communication multi-canaux</li>
+        <li>D&eacute;finir l'interface de programmation public de type REST</li>
+        <li>Participer aux discussions avec la communauté interne</li>
+        <li>Coordonner le travail des autres contributeurs</li>
+        <li>Agir en tant que consultant de pr&eacute;-vente</li>
+        <li>Contribuer au processus d&eacute;cisionel de l'entreprise</li>
+    </ul>
+
+    <h4>Achievements</h4>
+    <ul>
+        <li>Mise en &oelig;uvre du moteur de communication de ASE sur l'infrastructure de Google App Engine / Java</li>
+		<li>Mise en &oelig;uvre des connecteurs de type textuel pour le courriel, les textos, Twitter, et Facebook</li>
+        <li>Production de consoles Web 2.0 (bas&eacute;es sur Dojo) et de gadgets pour sites tiers (avec des <a href="http://github.com/domderrien/two-tiers-utils">utilitaires de <i>globalization</i> (i18n) ouverts</a>)</li>
+        <li>Adaptation des interfaces de ASE pour les utilisateurs de <a href="http://eztoff.com">ezToff.com</a> (joueurs et clubs de golf)</li>
+        <li>Modification des outils de <a href="http://aws.amazon.com/fps/">Amazon FPS</a> pour l'environnement de  Google App Engine (<a href="http://github.com/domderrien/amazon-fps-gaej">sources ouverts</a>)</li>
+        <li>Production d'une application Android pour les joueurs de golf de <a href="http://eztoff.com">ezToff.com</a> (<a href="http://github.com/domderrien/dretailer">sources ouverts</a>)</li>
+    </ul>
+</div>
+
+<div class="date">
+     2008-2010
+</div>
+<h2>
     <a name="compuware"></a>
     <a href="http://www.compuware.com/" title="Site Web de Compwuare Corporation">Compuware Corporation</a> - Montr&eacute;al, Canada
 </h2>
@@ -170,7 +210,7 @@ var dd = { // Namespace
      <a name="cpwr1"></a>
 
      <div class="date">
-         Depuis Juin 2008
+         Juin 2008 - Janvier 2010
      </div>
      <h3>
          <div class="title">Expert Web 2.0 et Mobiles</div>
@@ -464,9 +504,9 @@ var dd = { // Namespace
 </h1>
 
 <ul>
-    <li>Langages de programmation&nbsp;: Java, JavaScript + DHTML, <span style="color: gray;">C++, MFC/OWL, OpenTV</span></li>
-    <li>Outils de d&eacute;veloppement&nbsp;: Eclipse + JSEclipse, Tomcat 5, IntelliJ IDEA, ant, OracleAS (9i + 10g), JUnit + cobertura, JSUnit + Selenium, <span style="color: gray;">Borland C++, Microsoft Visual C++, gcc,</span> ClearCase (UCM), CVS/UCM, Subversion, Ant, CruiseControl</li>
-    <li>Syst&egrave;me d'exploitation: JVM, <span style="color: gray;">Windows, GNU/Linux, Solaris</span></li>
+    <li>Langages de programmation&nbsp;: Java, JavaScript + HTML + CSS, <span style="color: gray;">C++, MFC/OWL, OpenTV</span></li>
+    <li>Outils de d&eacute;veloppement&nbsp;: Eclipse + JSEclipse, Tomcat 5, JUnit + cobertura, JSUnit + Selenium, <span style="color: gray;">IntelliJ IDEA, ant, OracleAS (9i + 10g), JBorland C++, Microsoft Visual C++, gcc,</span> git, <span style="color: gray;">ClearCase (UCM), CVS/UCM, Subversion, Ant, CruiseControl</span></li>
+    <li>Syst&egrave;me d'exploitation: JVM, Android, GNU/Linux, <span style="color: gray;">Windows, Solaris</span></li>
     <li>M&eacute;thodes: UML, Design patterns, J2EE (Servlet/JSP/EJB), JSF, Agile methodology (TDD + Continuous Integration + Peer Programming)</li>
 </ul>
 
@@ -500,6 +540,7 @@ var dd = { // Namespace
 </h1>
 
 <ul>
+  <li>Blogue principalement technique &agrave; <a href="http://domderrien.blogpspot.com/">domderrien.blogspot.com</a></li>
   <li>M&eacute;thode de d&eacute;veloppement Agile - <a href="http://profs.logti.etsmtl.ca/departement/index.html">&Eacute;cole Sup&eacute;rieure de Technologie</a>, Montr&eacute;al, Avril 2008</li>
   <li>D. Derrien - Sir&egrave;ne F&nbsp;: a hardware/software package dedicated to computing of Neuro Fuzzy Networks - Journ&eacute;es sur les r&eacute;seaux neuromim&eacute;tiques et leurs applications, Marseille, France, 15-16&nbsp;d&eacute;cembre. 1994</li>
 
@@ -511,7 +552,7 @@ var dd = { // Namespace
 </h1>
 
 <ul>
-  <li>Depuis Sept. 2008&nbsp;: cofondateur du groupe <a href="http://archmtl.spaces.live.com">Rencontres d'Architecture de Montr&eacute;al</a> qui rassemble r&eacute;guli&egrave;rement des architectes TI de domaines et d'exp&eacute;riences vari&eacute;s pour cr&eacute;er des contacts, pour assister &agrave; des conf&eacute;rences techniques, pour apporter des contributions &agrave; la communaut&eacute; TI.</li>
+  <li>2008-2009&nbsp;: cofondateur du groupe <a href="http://archmtl.spaces.live.com">Rencontres d'Architecture de Montr&eacute;al</a> qui rassemble r&eacute;guli&egrave;rement des architectes TI de domaines et d'exp&eacute;riences vari&eacute;s pour cr&eacute;er des contacts, pour assister &agrave; des conf&eacute;rences techniques, pour apporter des contributions &agrave; la communaut&eacute; TI.</li>
   <li>Depuis 2007&nbsp;: cofondateur du chap&icirc;tre canadien de <a href="http://www.diku-dilenga.org/">Diku Dilenga</a> pour supporter financi&egrave;rement et logistiquement le chap&icirc;tre de la R&eacute;publique d&eacute;mocratique du Congo qui offre du micro financement, de l'&eacute;ducation et de l'aide aux plus pauvres.</li>
   <li>1999-2007: <a href="http://www.results-resultats.ca/">RESULTS Canada</a> pour faire pression sur le gouvernement pour qu'il investisse dans des projets visant &agrave; lutter contre la pauvret&eacute; absolue, pour amener les citoyens &agrave; reprendre place dans le domaine politique.</li>
 </ul>

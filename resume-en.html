@@ -38,17 +38,17 @@
                <a href="http://www.google.com/reader/shared/02343169150872088595" title="Selected articles from various RSS feeds"><img src="images/icons/greader.ico"></a>
                <a href="http://www.google.com/reader/shared/02343169150872088595" title="Selected articles from various RSS feeds">Google Reader shared items</a>
                <br />
-               <a href="http://domderrien.blogspot.com/" title="My blog"><img src="images/icons/blogger.ico"></a>
+               <a href="http://domderrien.blogspot.com/" title="My blog"><img src="images/icons/blogger.ico" width="16" height="16"></a>
                <a href="http://domderrien.blogspot.com/" title="My blog">Blog &ldquo;Sharing Technologies&rdquo;</a>
                <br />
                <a href="http://www.linkedin.com/in/domderrien" title="Network"><img src="images/icons/linkedin.ico"></a>
                <a href="http://www.linkedin.com/in/domderrien" title="Network">LinkedIn profile</a>
                <br />
-               <a href="http://friendfeed.com/domderrien" title="Shared stuff"><img src="images/icons/friendfeed.ico"></a>
-               <a href="http://friendfeed.com/domderrien" title="Shared stuff">FriendFeed</a>
-               <br />
                <a href="http://www.twitter.com/domderrien"><img src="images/icons/twitter.ico"></a>
                <a href="http://www.twitter.com/domderrien">Last Tweets</a>
+               <br />
+               <a href="http://github.com/domderrien/" title="My open source repositories"><img src="images/icons/github.ico"></a>
+               <a href="http://github.com/domderrien/" title="My open source repositories">My open sources</a>
            </span>
            <span class="print">
                www.google.com/reader/shared/02343169150872088595 <img src="images/icons/greader.ico"><br />
@@ -79,7 +79,8 @@ var dd = { // Namespace
       durations["Oracle1"] =   getDiffInMonths(new Date(2003,9,1),  new Date(2006,4,28));
       durations["Oracle2"] =   getDiffInMonths(new Date(2006,4,28), new Date(2006,8,17));
       durations["IBM"] =       getDiffInMonths(new Date(2006,9,4),  new Date(2008,4,28));
-      durations["Compuware"] = getDiffInMonths(new Date(2008,5,9),  new Date());
+      durations["Compuware"] = getDiffInMonths(new Date(2008,5,9),  new Date(2010,1,20));
+      durations["M&A"] =       getDiffInMonths(new Date(2010,1,20), new Date());
       dd._durations = durations;
     }
     return dd._durations;
@@ -90,14 +91,14 @@ var dd = { // Namespace
     var durations = dd.getTaskDurations();
     params.push("cht=bhs"); // Chart type
     params.push("&chd=t:" +
-      durations["Compuware"] + "," + durations["IBM"] + "," + durations["Steltor"] + "," + durations["THOMSON1"] + "," + durations["UCI"] + "|" +
-      "0," +                         "0," +                   durations["Oracle1"] + "," + durations["THOMSON2"] + "," + "0" + "|" +
-      "0," +                         "0," +                   durations["Oracle2"] + "," + "0," +                        "0"
+      durations["M&A"] + "," + durations["Compuware"] + "," + durations["IBM"] + "," + durations["Steltor"] + "," + durations["THOMSON1"] + "," + durations["UCI"] + "|" +
+      "0," +                   "0," +                         "0," +                   durations["Oracle1"] + "," + durations["THOMSON2"] + "," + "0" + "|" +
+      "0," +                   "0," +                         "0," +                   durations["Oracle2"] + "," + "0," +                        "0"
     );
     params.push("&chs=500x200");
     params.push("&chxt=x,y");
     params.push("&chxp=0,12,24,36,48,60,72,84");
-    params.push("&chxl=0:|1 an|2|3|4|5|6|7 years|1:|UCI|THOMSON|Oracle|IBM Rational|Compuware");
+    params.push("&chxl=0:|1 year|2|3|4|5|6|7 years|1:|UCI|THOMSON|Oracle|IBM Rational|Compuware|Milstein and assoc.");
     params.push("&chg=12,100,1,0");
     params.push("&chco=4d89f9,8db9ff,c6d9fd");
     params.push("&chtt=Different companies I worked with|From small to big ones");
@@ -108,11 +109,11 @@ var dd = { // Namespace
     var durations = dd.getTaskDurations();
     params.push("cht=p3");
     params.push("chd=t:" +
-      (durations["UCI"]) + "," +                              // Paris
-      (durations["THOMSON1"] + durations["THOMSON2"]) + "," + // Rennes
-      (durations["Steltor"]) + "," +                          // Montr�al
-      (durations["Oracle1"] + durations["Oracle2"]) + "," +   // Redwood Shores
-      (durations["IBM"] + durations["Compuware"])             // Montr�al
+      (durations["UCI"]) + "," +                                     // Paris
+      (durations["THOMSON1"] + durations["THOMSON2"]) + "," +        // Rennes
+      (durations["Steltor"]) + "," +                                 // Montréal
+      (durations["Oracle1"] + durations["Oracle2"]) + "," +          // Redwood Shores
+      (durations["IBM"] + durations["Compuware"]) + durations["M&A"] // Montréal
     );
     params.push("chs=500x200");
     params.push("chl=Paris (FR)|Rennes (FR)|Montr&eacute;al (CA)|Redwood Shores (US)|Montr&eacute;al (CA)");
@@ -128,9 +129,9 @@ var dd = { // Namespace
     params.push("chco=ffffff,4d89f9,c6d9fd");
     params.push("chld=FRCAUS");
     params.push("chd=t:" +
-      (durations["UCI"] + durations["THOMSON1"] + durations["THOMSON2"]) + "," + // FR
-      (durations["Steltor"] + durations["IBM"] + durations["Compuware"]) + "," + // CA
-      (durations["Oracle1"] + durations["Oracle2"])                              // US
+      (durations["UCI"] + durations["THOMSON1"] + durations["THOMSON2"]) + "," +                    // FR
+      (durations["Steltor"] + durations["IBM"] + durations["Compuware"]) + durations["M&A"] + "," + // CA
+      (durations["Oracle1"] + durations["Oracle2"])                                                 // US
     );
     params.push("chtm=world");
     params.push("chf=bg,s,EAF7FE");
@@ -157,6 +158,48 @@ var dd = { // Namespace
      Until today
 </div>
 <h2>
+    <a name="m&a"></a>
+    <a href="http://milstein-assoc.com/" title="Milstein and Associates Website">Milstein and associates inc.</a> - Montr&eacute;al, Canada
+</h2>
+<br clear="both" />
+
+<div class="work_unit">
+     <a name="m&a1"></a>
+
+     <div class="date">
+         Since January 2010
+     </div>
+     <h3>
+         <div class="title">Co-founder of <a href="http://anothersocialeconomy.com/about">AnotherSocialEconomy.com</a><br/>Software Architect & Team Lead</div>
+     </h3>
+    <br clear="both" />
+
+    <h4>Responsibilities</h4>
+    <ul>
+        <li>Define the architecture of the core engine of AnotherSocialEconomy.com (ASE)</li>
+		<li>Define the architecture of the multi-channel interfaces</li>
+        <li>Define the public REST API</li>
+        <li>Participate to internal community</li>
+        <li>Coordinate the work of other contributors</li>
+		<li>Contribute to pre-sales consulting</li>
+		<li>Contribute to the business decision-making</li>
+    </ul>
+
+    <h4>Achievements</h4>
+    <ul>
+        <li>Implementation of the ASE communication engine on Google App Engine / Java</li>
+		<li>Implementation of the text-based connectors for email, SMS, Twitter, Facebook</li>
+        <li>Production of Web 2.0 consoles (Dojo based) and of embeddable widgets (with <a href="http://github.com/domderrien/two-tiers-utils">i18n utilities open-sourced</a>)</li>
+		<li>Specialization of the ASE interfaces for the <a href="http://eztoff.com">ezToff.com</a> for golf players and golf courses</li>
+        <li>Adaptation of a library for <a href="http://aws.amazon.com/fps/">Amazon FPS</a> to the Google App Engine environment (<a href="http://github.com/domderrien/amazon-fps-gaej">open-sourced</a>)</li>
+        <li>Production of an Android application for the <a href="http://eztoff.com">ezToff.com</a> users (<a href="http://github.com/domderrien/dretailer">open-sourced</a>)</li>
+    </ul>
+</div>
+
+<div class="date">
+     2008-2010
+</div>
+<h2>
     <a name="compuware"></a>
     <a href="http://www.compuware.com/" title="Compwuare Corporation Website">Compuware Corporation</a> - Montr&eacute;al, Canada
 </h2>
@@ -166,12 +209,11 @@ var dd = { // Namespace
      <a name="cpwr1"></a>
 
      <div class="date">
-         Since June 2008
+         June 2008 - January 2010
      </div>
      <h3>
          <div class="title">Web 2.0 and Mobile Expert</div>
          <div class="position">Senior Technical Consultant, Technology Group, Compuware</div>
-
      </h3>
     <br clear="both" />
 
@@ -179,14 +221,17 @@ var dd = { // Namespace
     <ul>
         <li>Evaluate emerging technologies, share expertise, and apply knowledge</li>
         <li>Propose new platforms and methodolgies to improve the development process</li>
-        <li>Investigate new product developments</li>
+        <li>Investigate new product developments in the mobile area</li>
+        <li>Be available for blitz projects</li>
     </ul>
 
     <h4>Achievements</h4>
     <ul>
         <li>Extension of the <i>VSM Dashboard</i> infrastructure to support <i>FreeMarker</i> templates</li>
+        <li>Implementation of Web 2.0 console (Dojo based) for general purpose caching mechansim (architecture, coding, testing & documentation).</li>
         <li>Active participation in <i>Agile</i> and <i>Best Practices</i> discussion groups</li>
         <li>Selection of a Web Portal platform</li>
+        <li>Prototype of agents on Android and BlackBerry platforms</li>
     </ul>
 </div>
 
@@ -456,10 +501,10 @@ var dd = { // Namespace
 </h1>
 
 <ul>
-    <li>Programming languages: Java, JavaScript + DHTML, <span style="color: gray;">C++, MFC/OWL, OpenTV</span></li>
-    <li>Case tools: Eclipse + JSEclipse, Tomcat 5, IntelliJ IDEA, ant, OracleAS (9i + 10g), JUnit + cobertura, JSUnit + Selenium, <span style="color: gray;">Borland C++, Microsoft Visual C++, gcc,</span> ClearCase (UCM), CVS/UCM, Subversion, Ant, CruiseControl</li>
+    <li>Programming languages: Java, JavaScript + HTML + CSS, <span style="color: gray;">C++, MFC/OWL, OpenTV</span></li>
+    <li>Case tools: Eclipse + JSEclipse, Tomcat 5, JUnit + cobertura, JSUnit + Selenium, <span style="color: gray;">IntelliJ IDEA, ant, OracleAS (9i + 10g), Borland C++, Microsoft Visual C++, gcc,</span> git, <span style="color: gray;">ClearCase (UCM), CVS/UCM, Subversion, Ant, CruiseControl</span></li>
 
-    <li>Operating systems: JVM, <span style="color: gray;">Windows, GNU/Linux, Solaris</span></li>
+    <li>Operating systems: JVM, Android, GNU/Linux, <span style="color: gray;">Windows, Solaris</span></li>
     <li>Methods: UML, Design patterns, J2EE (Servlet/JSP/EJB), JSF, Agile methodology (TDD + Continuous Integration + Peer Programming)</li>
 </ul>
 
@@ -496,8 +541,8 @@ var dd = { // Namespace
 </h1>
 
 <ul>
+  <li>Blog on <a href="http://domderrien.blogpspot.com/">domderrien.blogspot.com</a></li>
   <li>M&eacute;thode de d&eacute;veloppement Agile - <a href="http://profs.logti.etsmtl.ca/departement/index.html">&Eacute;cole Sup&eacute;rieure de Technologie</a>, Montr&eacute;al, April 2008</li>
-
   <li>D. Derrien - Sir&egrave;ne F: a hardware/software package dedicated to computing of Neuro Fuzzy Networks - Journ&eacute;es sur les r&eacute;seaux neuromim&eacute;tiques et leurs applications, Marseille, France, December 15-16 1994</li>
 </ul>
 
@@ -507,7 +552,7 @@ var dd = { // Namespace
 </h1>
 
 <ul>
-  <li>Sept. 2008-now: co-founder of the <a href="http://archmtl.spaces.live.com">Rencontres d'Architecture de Montr&eacute;al</a> group which aims to facilitate contacts and knowledge sharing between multi-dsciplinary IT architects.</>
+  <li>2008-2009: co-founder of the <a href="http://archmtl.spaces.live.com">Rencontres d'Architecture de Montr&eacute;al</a> group which aims to facilitate contacts and knowledge sharing between multi-dsciplinary IT architects.</>
   <li>2007-now: co-founder of the canadian chapter of <a href="http://diku-dilenga.org/">Diku Dilenga</a> to back and help funding the congolese chapter which offers micro finance, education, and support to poorest people in Democratic Republic of the Congo.</li>
   <li>1999-2007: volunteer with <a href="http://www.results-resultats.ca/">RESULTS Canada</a> which lobbies governments, public agencies, and big corporations to fight absolute poverty, stimulate citizens to re-appropriate the political field.</li>
 </ul>
