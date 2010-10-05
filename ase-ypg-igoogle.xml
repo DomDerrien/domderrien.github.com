@@ -1,5 +1,44 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Module> 
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
   <ModulePrefs title="Buy it locally? by AnotherSocialEconomy.com" height="500" />
-  <Content type="url" href="http://anothersocialeconomy.appspot.com/widget/ase.jsp?lg=en&#38;brand=Buy%20it%20locally!&#38;countryCode=CA&#38;font-family=arial,helvetica,sans-serif&#38;font-family-brand=arial,helvetica,sans-serif&#38;font-family-title=arial,helvetica,sans-serif&#38;font-size=12px&#38;font-size-brand=18px&#38;font-size-title=14px&#38;color=%23252525&#38;color-odd-row=white&#38;color-brand=%23252525&#38;color-title=%23252525&#38;color-link=005e9d&#38;background-color=%23fff000&#38;background-color-odd-row=%237f8082" view="home" />
-</Module>
+  <UserPref name="lg" display_name="Language" default_value="en" datatype="enum" >
+    <EnumValue value="en" />
+    <EnumValue value="fr" />
+  </UserPref>
+  <Content type="html">
+    <![CDATA[
+    <script type="text/javascript">
+      gadgets.util.registerOnLoadHandler(function() {
+	    var prefs = new gadgets.Prefs();
+        var params = {
+          "lg": prefs.getArray("lg"),
+          "brand": "Buy it locally!",
+          "countryCode": "CA",
+          "font-family": "arial,helvetica,sans-serif"
+          "font-family-brand": "arial,helvetica,sans-serif",
+          "font-family-title": "arial,helvetica,sans-serif",
+          "font-size": "12px",
+          "font-size-brand": "18px",
+          "font-size-title": "14px",
+          "color": "#252525",
+          "color-odd-row": "white",
+          "color-brand": "#252525",
+          "color-title": "#252525",
+          "color-link": "#005e9d",
+          "background-color": "#fff000",
+          "background-color-odd-row": "#7f8082""
+        };
+        document.getElementById("wrapped").src = "http://anothersocialeconomy.appspot.com/widget/ase.jsp" + "?" + gadgets.io.encodeValues(params);
+	  });
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+    </style>
+    <iframe id="wrapped" width="100%" height="100%" style="border: none; margin: 0; overflow: hidden; padding: 0;" scrolling="no" frameborder="0" ></iframe>
+    ]]>
+  </Content>
+</Module> 
