@@ -14,7 +14,7 @@
           "lg": prefs.getArray("lg"),
           "brand": "Buy it locally!",
           "countryCode": "CA",
-          "font-family": "arial,helvetica,sans-serif"
+          "font-family": "arial,helvetica,sans-serif",
           "font-family-brand": "arial,helvetica,sans-serif",
           "font-family-title": "arial,helvetica,sans-serif",
           "font-size": "12px",
@@ -26,9 +26,9 @@
           "color-title": "#252525",
           "color-link": "#005e9d",
           "background-color": "#fff000",
-          "background-color-odd-row": "#7f8082""
+          "background-color-odd-row": "#7f8082"
         };
-        document.getElementById("wrapped").src = "http://anothersocialeconomy.appspot.com/widget/ase.jsp" + "?" + gadgets.io.encodeValues(params);
+        document.getElementById("wrapped").src = "http://anothersocialeconomy.appspot.com/widget/ase.jsp?" + gadgets.io.encodeValues(params);
 	  });
     </script>
     <style>
